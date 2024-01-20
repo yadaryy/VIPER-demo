@@ -27,7 +27,6 @@
 		AD8BFA222B59127E000282B0 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8BFA212B59127E000282B0 /* HttpRouter.swift */; };
 		AD8BFA252B591C70000282B0 /* CoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8BFA242B591C70000282B0 /* CoinRouter.swift */; };
 		AD8BFA272B592FA8000282B0 /* CoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8BFA262B592FA8000282B0 /* CoinService.swift */; };
-		AD8BFA2A2B5A2700000282B0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8BFA292B5A2700000282B0 /* Coordinator.swift */; };
 		AD8BFA2D2B5A49CA000282B0 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AD8BFA2C2B5A49CA000282B0 /* SVProgressHUD */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		AD8BFA212B59127E000282B0 /* HttpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRouter.swift; sourceTree = "<group>"; };
 		AD8BFA242B591C70000282B0 /* CoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRouter.swift; sourceTree = "<group>"; };
 		AD8BFA262B592FA8000282B0 /* CoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinService.swift; sourceTree = "<group>"; };
-		AD8BFA292B5A2700000282B0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +155,6 @@
 		AD8BFA062B58DA69000282B0 /* CoinList */ = {
 			isa = PBXGroup;
 			children = (
-				AD8BFA282B5A26E5000282B0 /* Coordinator */,
 				AD8BFA0B2B58DB75000282B0 /* CoinListViewController.swift */,
 				AD8BFA0F2B58DC15000282B0 /* CoinListPresenter.swift */,
 				AD8BFA112B58DC27000282B0 /* CoinListRouter.swift */,
@@ -210,14 +207,6 @@
 				AD8BFA212B59127E000282B0 /* HttpRouter.swift */,
 			);
 			path = HTTP;
-			sourceTree = "<group>";
-		};
-		AD8BFA282B5A26E5000282B0 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				AD8BFA292B5A2700000282B0 /* Coordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +351,6 @@
 			files = (
 				AD8BFA152B58DC4C000282B0 /* CoinListInteractor.swift in Sources */,
 				AD8BF9D72B58D868000282B0 /* AppDelegate.swift in Sources */,
-				AD8BFA2A2B5A2700000282B0 /* Coordinator.swift in Sources */,
 				AD8BFA0C2B58DB75000282B0 /* CoinListViewController.swift in Sources */,
 				AD8BFA1D2B590E5E000282B0 /* Protocols.swift in Sources */,
 				AD8BFA0A2B58DB39000282B0 /* CoinList.swift in Sources */,

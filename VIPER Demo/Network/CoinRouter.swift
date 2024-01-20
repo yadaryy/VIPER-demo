@@ -20,7 +20,7 @@ extension CoinRouter: HttpRouter{
         let url = "https://api.coingecko.com"
         let api = "/api"
         let version = "/v3"
-        let coin = "/coin"
+        let coin = "/coins"
         
         return URL(string: url+api+version+coin)!
     }
@@ -32,10 +32,12 @@ extension CoinRouter: HttpRouter{
         }
     }
     
-    var parameters:[String:String]?{
+    var parameters:[String:String]{
         switch self {
         case .getCoinList:
-            return ["include_platform":"false"]
+            var params: [String: String] = [:]
+            params["include_platform"] = "false"
+            return params
         }
     }
     

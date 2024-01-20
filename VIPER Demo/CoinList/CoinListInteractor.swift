@@ -17,14 +17,13 @@ class CoinListInteractor{
 extension CoinListInteractor : CoinListBusinessLogic {
 
     func getData() {
-        print("get data")
-        coinService.getCoinList{ response in
+        coinService.getCoinList{ [weak self] response in
             switch response {
                 case .success(let response):
-                self.presenter?.getDataOnComplete(response: response)
+                self?.presenter?.getDataOnComplete(response: response)
                 
             case .failure(let error):
-                self.presenter?.getDataOnError(with: String(describing: error))
+                self?.presenter?.getDataOnError(with: String(describing: error))
             }
         }
     }

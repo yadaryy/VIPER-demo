@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 protocol CoinListDisplayLogic {
+    var viewModel: [CoinList]? { get set }
     func setupInitialView()
-    func showLoading()
-    func hideLoading()
     func reloadData()
     func setScreenTitle(with title:String)
 }

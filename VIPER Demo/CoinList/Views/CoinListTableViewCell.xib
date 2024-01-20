@@ -8,26 +8,44 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kDW-r4-cLg" customClass="CoinListTableViewCell" customModule="VIPER_Demo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinListTableViewCell" id="kDW-r4-cLg" customClass="CoinListTableViewCell" customModule="VIPER_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDW-r4-cLg" id="KqL-OA-Aod">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDW-r4-cLg" id="KqL-OA-Aod">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="coinName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7z-TG-cV9">
-                        <rect key="frame" x="38" y="12" width="77" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="263" translatesAutoresizingMaskIntoConstraints="NO" id="UcI-F9-wzT">
+                        <rect key="frame" x="13" y="19" width="275" height="22"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdL-wc-gUh">
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coinName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7z-TG-cV9">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="Atg-ev-9sV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="r7z-TG-cV9" firstAttribute="centerX" secondItem="KqL-OA-Aod" secondAttribute="centerX" id="6ei-An-S7W"/>
+                    <constraint firstItem="r7z-TG-cV9" firstAttribute="leading" secondItem="KqL-OA-Aod" secondAttribute="leading" constant="13" id="GWy-7J-tdc"/>
+                    <constraint firstItem="r7z-TG-cV9" firstAttribute="centerY" secondItem="KqL-OA-Aod" secondAttribute="centerY" id="SjB-Bu-YgD"/>
+                    <constraint firstItem="r7z-TG-cV9" firstAttribute="top" secondItem="KqL-OA-Aod" secondAttribute="top" constant="19" id="Wqe-Ov-t4B"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="coinName" destination="r7z-TG-cV9" id="thZ-ll-PPE"/>
             </connections>
-            <point key="canvasLocation" x="172" y="12"/>
+            <point key="canvasLocation" x="209.92366412213741" y="63.380281690140848"/>
         </tableViewCell>
     </objects>
 </document>

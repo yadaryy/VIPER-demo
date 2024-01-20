@@ -6,14 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 
 class CoinListPresenter : CoinListPresentationLogic{
     var view: CoinListDisplayLogic?
-    var router: CoinListRouter?
-    var interactor:CoinListInteractor?
-    
-    var viewModel:[CoinList]?
+    var router: CoinListRoutingLogic?
+    var interactor:CoinListBusinessLogic?
     
     let kAddressDetailSegueIdentifier = "showCoinListDetail"
     let pageTitle = "Coin List"
@@ -21,13 +20,9 @@ class CoinListPresenter : CoinListPresentationLogic{
 
 extension CoinListPresenter {
     
-    func getViewModel() -> [CoinList]? {
-        return viewModel
-    }
     
     func notifyViewLoaded() {
         view?.setupInitialView()
-        view?.showLoading()
         interactor?.getData()
     }
     
@@ -36,8 +31,7 @@ extension CoinListPresenter {
     }
     
     func getDataOnComplete(response: [CoinList]?) {
-        self.viewModel = response
-        view?.hideLoading()
+        self.view?.viewModel = response
         view?.reloadData()
     }
     

@@ -10,24 +10,27 @@ import UIKit
 import SVProgressHUD
 
 class CoinListViewController: UIViewController{
-    var presenter : CoinListPresenter?
+    var presenter : CoinListPresentationLogic?
+    var viewModel: [CoinList]?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter?.notifyViewLoaded()
+        setup()
+        presenter?.notifyViewLoaded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
-        self.presenter?.notifyViewWillAppear()
+        presenter?.notifyViewWillAppear()
       }
 }
 
 
 
 extension CoinListViewController : CoinListDisplayLogic {
+    
     func setupInitialView() {
         let bundle = Bundle(for: CoinListTableViewCell.self)
         
@@ -39,13 +42,7 @@ extension CoinListViewController : CoinListDisplayLogic {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
-    func showLoading() {
-        SVProgressHUD.show()
-    }
     
-    func hideLoading() {
-        SVProgressHUD.dismiss()
-    }
     
     func reloadData() {
         self.tableView.reloadData()
@@ -54,20 +51,30 @@ extension CoinListViewController : CoinListDisplayLogic {
     func setScreenTitle(with title: String) {
         self.title = title
     }
+    
+    private func setup(){
+      let view = self
+      let interactor = CoinListInteractor()
+      let presenter = CoinListPresenter()
+        
+      presenter.interactor = interactor
+      presenter.view = view
+      interactor.presenter = presenter
+      view.presenter = presenter
+    }
 }
 
 extension CoinListViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter?.getViewModel()?.count ?? 0
+        return viewModel?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CoinListTableViewCell.identifier, for: indexPath) as! CoinListTableViewCell
         
-        let viewModel = self.presenter?.getViewModel()![indexPath.row]
-        cell.coinName.text = viewModel?.name
+        cell.coinName.text = viewModel?[indexPath.row].name
         
         return cell
     }
